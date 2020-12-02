@@ -33,11 +33,12 @@ inquirer.prompt([
     message: 'Usage?',
   },
   {
-    type: 'input',
-    name: 'license',
-    message: 'License?',
-  },
-  {
+  type: 'list',
+      name: 'license',
+      message: 'Which license?',
+      choices: ['Jumbo', 'Large', 'Standard', 'Medium', 'Small', 'Micro'],
+    },
+      {
     type: 'input',
     name: 'contributions',
     message: 'Contribution guidelines?',
@@ -56,6 +57,7 @@ inquirer.prompt([
 
 // function to write README file
 function writeToFile(fileName, data) {
+    //put the readme file bs here
 }
 
 // // function to initialize program
