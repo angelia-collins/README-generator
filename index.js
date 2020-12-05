@@ -33,7 +33,7 @@ const questions = () =>
       type: 'list',
       name: 'license',
       message: 'Which license?',
-      choices: ['Jumbo', 'Large', 'Standard', 'Medium', 'Small', 'Micro'],
+      choices: ['© 2020', 'None'],
     },
     {
       type: 'input',
@@ -48,7 +48,7 @@ const questions = () =>
     {
       type: 'input',
       name: 'questions',
-      message: 'Questions?',
+      message: 'Github username?',
     },
   ])
     .then((answers) => {
@@ -56,37 +56,35 @@ const questions = () =>
       return answers;
     });
 
-
-
-// var markdown =
-//   `# ${questions.title}
-//   Get a unique password based on your specifications.
-
-//   ## What It Looks Like
-//   ![password generator](/Assets/password-generator-screencap.png)
-
-//   ## Check It Out
-//   [Generate a Password](https://angelia-collins.github.io/PasswordGenerator/)
-
-//  ©2020
-
-// `;
-
 const init = async () => {
   answers = await questions();
    var markdown = `# ${answers.title}
-  Get a unique password based on your specifications.
     
-## What It Looks Like
-![password generator](/Assets/password-generator-screencap.png)
-    
-## Check It Out
-[Generate a Password](https://angelia-collins.github.io/PasswordGenerator/)
-    
-©2020
+## Description
+${answers.description}
+
+## Table of Contents
+${answers.tofc}
+
+## Installation instructions
+${answers.install}
+
+## Usage
+${answers.usage}
+
+## License Info
+${answers.license}
+
+## Contributions
+${answers.contributions}
+
+## Test Instructions
+${answers.tests}
+
+## Questions?
+${answers.questions}
   
 `;
-  // await questions();
   console.log(markdown);
 
   fs.writeFile('README.md', markdown, (err) => {
@@ -97,4 +95,3 @@ const init = async () => {
   });
 }
 init();
-// console.log(`${questions.title}`);
