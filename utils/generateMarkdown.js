@@ -1,6 +1,6 @@
 // function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
+  let markdown = `# ${data.title}
   Get a unique password based on your specifications.
   
   ## What It Looks Like
