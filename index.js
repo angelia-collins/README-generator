@@ -16,11 +16,6 @@ const questions = () =>
     },
     {
       type: 'input',
-      name: 'tofc',
-      message: 'Table of Contents?',
-    },
-    {
-      type: 'input',
       name: 'install',
       message: 'Installation instructions?',
     },
@@ -69,25 +64,32 @@ const init = async () => {
 ${answers.description}
 
 ## Table of Contents
-${answers.tofc}
+* [Table of Contents](#Table)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Contributions](#Contributions)
+* [Tests](#Tests)
+* [Questions?](#Questions?)
 
-## Installation instructions
+## Installation
 ${answers.install}
 
 ## Usage
 ${answers.usage}
 
-## License Info
+## License
 ${answers.license}
 
 ## Contributions
 ${answers.contributions}
 
-## Test Instructions
+## Tests
 ${answers.tests}
 
 ## Questions?
 My Github: https://github.com/${answers.questions} 
+
 My email: ${answers.email}
   
 `;
