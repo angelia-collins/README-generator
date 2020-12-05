@@ -1,10 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// const writeFileAsync = util.promisify(fs.writeFile);
+// const writeFileAsync = promisify(fs.writeFile);
 
 // prompts
-const questions = () =>
+const questions = (answers) =>
 inquirer.prompt([
   {
     type: 'input',
@@ -55,7 +55,7 @@ inquirer.prompt([
 ]);
 
 
-  var markdown = `# ${questions.title}
+  var markdown = `# ${answers.title}
   Get a unique password based on your specifications.
   
   ## What It Looks Like
@@ -68,12 +68,15 @@ inquirer.prompt([
 
 `;
 
-questions();
+// questions()
 
+const init = async () => {
+  await questions();
 fs.writeFile('README.md', markdown, (err) => {
   if (err) {
           return console.log(err);
         }
         console.log('readme had been made.')
 });
-
+}
+init();
