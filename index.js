@@ -50,6 +50,11 @@ const questions = () =>
       name: 'questions',
       message: 'Github username?',
     },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Email address?',
+    },
   ])
     .then((answers) => {
       console.log(JSON.stringify(answers, null, '  '));
@@ -82,7 +87,8 @@ ${answers.contributions}
 ${answers.tests}
 
 ## Questions?
-${answers.questions}
+My Github: https://github.com/${answers.questions} 
+My email: ${answers.email}
   
 `;
   console.log(markdown);
