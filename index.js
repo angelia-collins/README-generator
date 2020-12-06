@@ -64,7 +64,6 @@ const init = async () => {
 ${answers.description}
 
 ## Table of Contents
-* [Table of Contents](#Table)
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [License](#License)
